@@ -25,7 +25,7 @@ const ProfileHome = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/getprofile/" + userEmail, {
+      .get("https://ambitions-backend.onrender.com/getprofile/" + userEmail, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

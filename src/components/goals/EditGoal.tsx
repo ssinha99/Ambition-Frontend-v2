@@ -95,7 +95,7 @@ const EditGoal: React.FC<IEditGoalProps> = ({
     };
     setIsFetching(true);
     axios
-      .post("http://localhost:3000/updateAmbition", payload, {
+      .post("https://ambitions-backend.onrender.com/updateAmbition", payload, {
         headers: {
           authorization: `Bearer ${JSON.parse(TOKEN ?? "")?.token}`,
         },

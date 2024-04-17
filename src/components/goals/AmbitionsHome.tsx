@@ -50,7 +50,7 @@ const AmbitionsHome = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/ambitionsData", {
+      .get("https://ambitions-backend.onrender.com/ambitionsData", {
         headers: {
           authorization: `Bearer ${TOKEN}`,
         },

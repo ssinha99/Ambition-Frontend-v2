@@ -24,7 +24,7 @@ const Login = () => {
         password,
       };
       axios
-        .post("http://localhost:3000/login", payload)
+        .post("https://ambitions-backend.onrender.com/login", payload)
         .then((res) => {
           if(res.data.message)
             setAlertMessage(res.data.message);

@@ -41,7 +41,7 @@ const SignUpNextScreen: React.FC<ISignUpNextScreenProps> = ({
     };
     setIsFetching(true)
     axios
-      .post("http://localhost:3000/signup", payload)
+      .post("https://ambitions-backend.onrender.com/signup", payload)
       .then((res) => {
         console.log(res.data);
         setIsFetching(false)

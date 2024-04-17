@@ -54,7 +54,7 @@ const AddAmbition = () => {
     };
     setIsFetching(true);
     axios
-      .post("http://localhost:3000/addAmbition", payload, {
+      .post("https://ambitions-backend.onrender.com/addAmbition", payload, {
         headers: {
           authorization: `Bearer ${JSON.parse(TOKEN ?? "")?.token}`,
         },

@@ -80,7 +80,7 @@ const Menu: React.FC<IMenuProps> = ({
     };
     setIsFetching(true);
     axios
-      .delete("http://localhost:3000/deleteAmbition", config)
+      .delete("https://ambitions-backend.onrender.com/deleteAmbition", config)
       .then(() => {
         console.log("deleted successfully!");
         location.reload();

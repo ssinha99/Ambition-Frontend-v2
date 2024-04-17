@@ -33,7 +33,7 @@ const SelectAssets: React.FC<ISelectAssets> = ({
   
   useEffect(() => {
     axios
-      .get("http://localhost:3000/ambitionsDetailedData", {
+      .get("https://ambitions-backend.onrender.com/ambitionsDetailedData", {
         headers: {
           authorization: `Bearer ${JSON.parse(TOKEN ?? "")?.token}`,
         },
