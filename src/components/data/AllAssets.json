@@ -1,0 +1,34 @@
+{
+    "Mutualfunds": [
+        {
+          "unitPrice": "53.3",
+          "quantity": "3,830",
+          "fundId": "7",
+          "fundName": "Axis Bluechip Fund",
+          "fundType": "Equity"
+        },
+        {
+          "unitPrice": "53.3",
+          "quantity": "3,830",
+          "fundId": "8",
+          "fundName": "Axis Bluechip Fund",
+          "fundType": "Equity"
+        }
+      ],
+      "Stocks": [
+        {
+          "stockName": "PVRINOX",
+          "type": "Equity",
+          "stockId": "10",
+          "price": "1,710",
+          "quantity": "1,000"
+        },
+        {
+          "stockName": "Axis Bluechip Fund",
+          "type": "Equity",
+          "stockId": "11",
+          "price": "53.3",
+          "quantity": "3,830"
+        }
+      ]
+}

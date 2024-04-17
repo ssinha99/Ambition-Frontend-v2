@@ -1,0 +1,279 @@
+// GET AMBITIONS
+// /api/ambitions
+
+// Sample Output
+[
+  {
+    "id": "658e95a0988319b359c660e4",
+    "name": "Mercedes Car",
+    "category": "Lifestyle",
+    "maturityDate": "Feb 01, 2026",
+    "targetValue": 7000000,
+    "days_to_go": 764,
+    "allocatedValue": 305989.8,
+    "completionPercent": 4,
+    "funds": [
+      {
+        "universalFundID": "AxisFund",
+        "allocatedQuantity": 340,
+        "capInCategory": "Mutual Funds",
+        "capOutCategory": "Equity",
+        "latestPrice": 899.97
+      }
+    ]
+  },
+  {
+    "id": "658e9703988319b359c660e5",
+    "name": "Home",
+    "category": "Lifestyle",
+    "maturityDate": "Feb 01, 2028",
+    "targetValue": 90000000,
+    "days_to_go": 1494,
+    "allocatedValue": 488586.91000000003,
+    "completionPercent": 1,
+    "funds": [
+      {
+        "universalFundID": "AxisFund",
+        "allocatedQuantity": 1270,
+        "capInCategory": "Mutual Funds",
+        "capOutCategory": "Equity",
+        "latestPrice": 278.61
+      },
+      {
+        "universalFundID": "HDFCFund",
+        "allocatedQuantity": 223,
+        "capInCategory": "Mutual Funds",
+        "capOutCategory": "Equity",
+        "latestPrice": 604.27
+      }
+    ]
+  },
+  {
+    "id": "658e984650fd1b6296c1fb17",
+    "name": "Surplus",
+    "category": "Funds",
+    "maturityDate": "Feb 01, 2100",
+    "targetValue": 0,
+    "days_to_go": 27792,
+    "allocatedValue": 15890040,
+    "completionPercent": 0,
+    "funds": [
+      {
+        "universalFundID": "AxisFund",
+        "allocatedQuantity": 8000,
+        "capInCategory": "Mutual Funds",
+        "capOutCategory": "Equity",
+        "latestPrice": 899.33
+      },
+      {
+        "universalFundID": "HDFCFund",
+        "allocatedQuantity": 10000,
+        "capInCategory": "Mutual Funds",
+        "capOutCategory": "Equity",
+        "latestPrice": 869.54
+      }
+    ]
+  },
+  {
+    "id": "658ead8e3a48ed2528d8372d",
+    "name": "PlayStation 5",
+    "category": "Gadgets",
+    "maturityDate": "Feb 01, 2024",
+    "targetValue": 55000,
+    "days_to_go": 33,
+    "allocatedValue": 0,
+    "completionPercent": 0,
+    "funds": []
+  }
+]
+
+
+// Get Ambitions by Category
+// /api/ambitions/categories
+
+[
+  {
+    "category": "Lifestyle",
+    "count": 2,
+    "ambitions": [
+      {
+        "id": "658e95a0988319b359c660e4",
+        "name": "Mercedes Car",
+        "category": "Lifestyle",
+        "maturityDate": "Feb 01, 2026",
+        "targetValue": 7000000,
+        "days_to_go": 764,
+        "allocatedValue": 328885.39999999997,
+        "completionPercent": 5,
+        "funds": [
+          {
+            "universalFundID": "AxisFund",
+            "allocatedQuantity": 340,
+            "capInCategory": "Mutual Funds",
+            "capOutCategory": "Equity",
+            "latestPrice": 967.31
+          }
+        ]
+      },
+      {
+        "id": "658e9703988319b359c660e5",
+        "name": "Home",
+        "category": "Lifestyle",
+        "maturityDate": "Feb 01, 2028",
+        "targetValue": 90000000,
+        "days_to_go": 1494,
+        "allocatedValue": 855159.8799999999,
+        "completionPercent": 1,
+        "funds": [
+          {
+            "universalFundID": "AxisFund",
+            "allocatedQuantity": 1270,
+            "capInCategory": "Mutual Funds",
+            "capOutCategory": "Equity",
+            "latestPrice": 513.17
+          },
+          {
+            "universalFundID": "HDFCFund",
+            "allocatedQuantity": 223,
+            "capInCategory": "Mutual Funds",
+            "capOutCategory": "Equity",
+            "latestPrice": 912.26
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Funds",
+    "count": 1,
+    "ambitions": [
+      {
+        "id": "658e984650fd1b6296c1fb17",
+        "name": "Surplus",
+        "category": "Funds",
+        "maturityDate": "Feb 01, 2100",
+        "targetValue": 0,
+        "days_to_go": 27792,
+        "allocatedValue": 15223960,
+        "completionPercent": 0,
+        "funds": [
+          {
+            "universalFundID": "AxisFund",
+            "allocatedQuantity": 8000,
+            "capInCategory": "Mutual Funds",
+            "capOutCategory": "Equity",
+            "latestPrice": 859.47
+          },
+          {
+            "universalFundID": "HDFCFund",
+            "allocatedQuantity": 10000,
+            "capInCategory": "Mutual Funds",
+            "capOutCategory": "Equity",
+            "latestPrice": 834.82
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Gadgets",
+    "count": 1,
+    "ambitions": [
+      {
+        "id": "658ead8e3a48ed2528d8372d",
+        "name": "PlayStation 5",
+        "category": "Gadgets",
+        "maturityDate": "Feb 01, 2024",
+        "targetValue": 55000,
+        "days_to_go": 33,
+        "allocatedValue": 0,
+        "completionPercent": 0,
+        "funds": []
+      }
+    ]
+  }
+]
+
+GET Ambitions Single Request
+/api/ambitions/{id}
+
+{
+  "id": "658e9703988319b359c660e5",
+  "name": "Home",
+  "category": "Lifestyle",
+  "maturityDate": "Feb 01, 2028",
+  "targetValue": 90000000,
+  "days_to_go": 1494,
+  "allocatedValue": 1226109.0899999999,
+  "completionPercent": 1,
+  "funds": [
+    {
+      "universalFundID": "AxisFund",
+      "allocatedQuantity": 1270,
+      "capInCategory": "Mutual Funds",
+      "capOutCategory": "Equity",
+      "latestPrice": 941.66
+    },
+    {
+      "universalFundID": "HDFCFund",
+      "allocatedQuantity": 223,
+      "capInCategory": "Mutual Funds",
+      "capOutCategory": "Equity",
+      "latestPrice": 135.43
+    }
+  ]
+}
+
+
+POST Ambition
+/api/ambitions
+Body: {
+  "name": "string",
+  "category": "string",
+  "maturityDate": "2023-12-29T12:01:51.904Z",
+  "targetValue": 0,
+  "funds": []
+}
+
+
+Put Ambition
+/api/ambitions/{id}
+Body: {
+  "name": "string",
+  "category": "string",
+  "maturityDate": "2023-12-29T12:02:36.772Z",
+  "targetValue": 0,
+  "funds": []
+}
+
+
+
+GET FUNDS
+/api/funds
+
+
+[
+  {
+    "universalFundID": "AxisFund",
+    "allocatedQuantity": 9610
+  },
+  {
+    "universalFundID": "HDFCFund",
+    "allocatedQuantity": 10223
+  }
+]
+
+
+GET SURPLUS FUNDS
+/api/funds/surplus
+
+[
+  {
+    "universalFundID": "AxisFund",
+    "allocatedQuantity": 8000
+  },
+  {
+    "universalFundID": "HDFCFund",
+    "allocatedQuantity": 10000
+  }
+]
