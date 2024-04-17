@@ -11,7 +11,7 @@ import CancelButton from "../shared/CancelButton";
 import LogoutIcon from '@mui/icons-material/Logout';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import PersonAddAltSharpIcon from '@mui/icons-material/PersonAddAltSharp';
-import { styleModal } from "../shared/StyleModal";
+import { styleModal } from "../shared/styleModal";
 import PrimaryButton from "../shared/PrimaryButton";
 
 const ProfileHome = () => {

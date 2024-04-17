@@ -26,7 +26,7 @@ import { detailedData as detailedDataType } from "../data/Ambition.detailedData.
 import { useNavigate } from "react-router-dom";
 import dayjs, { Dayjs } from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { styleModal } from "../shared/StyleModal";
+import { styleModal } from "../shared/styleModal";
 
 
 interface IEditGoalProps {
