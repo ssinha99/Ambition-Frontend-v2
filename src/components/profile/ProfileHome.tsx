@@ -32,7 +32,6 @@ const ProfileHome = () => {
       })
       .then((res) => {
         setUserProfile(res.data);
-        console.log(res.data[0]);
       })
       .catch((error) => {
         navigate("/login");
