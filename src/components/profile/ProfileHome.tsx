@@ -28,7 +28,7 @@ const ProfileHome = () => {
       .get("https://ambitions-backend.onrender.com/getprofile/" + userEmail, {
         headers: {
           Authorization: `Bearer ${token}`,
-        },
+        }
       })
       .then((res) => {
         setUserProfile(res.data);
