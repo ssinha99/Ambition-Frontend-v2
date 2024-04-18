@@ -34,7 +34,7 @@ function stringAvatar(name?: string) {
     sx: {
       bgcolor: name != undefined ?  stringToColor(name) : 'U',
     },
-    children: name != undefined ? `${firstNameFirstLetter}${secondNameFirstLetter}` : 'U',
+    children: secondNameFirstLetter != undefined ? `${firstNameFirstLetter}${secondNameFirstLetter}` : `${firstNameFirstLetter}`,
   };
 }
 
