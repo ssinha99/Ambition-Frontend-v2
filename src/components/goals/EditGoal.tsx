@@ -207,7 +207,7 @@ const EditGoal: React.FC<IEditGoalProps> = ({
           flexWrap: "wrap",
           justifyContent: "center",
           paddingBottom: "1%",
-          position: 'stikcy',
+          position: 'sticky',
           bottom: 0
         }}
       >

@@ -10,6 +10,7 @@ import FooterMenu from "../shared/FooterMenu";
 import AllocatedAssets from "../allocations/AllocatedAssets";
 import axios from "axios";
 import { detailedData as detailedDataType } from "../data/Ambition.detailedData.type";
+import { useNavigate } from "react-router-dom";
 
 interface IAmbitionDetailsProps {
   setShowAmbitionDetails: React.Dispatch<React.SetStateAction<boolean>>;
@@ -28,6 +29,7 @@ const AmbitionDetails: React.FC<IAmbitionDetailsProps> = ({
   const [showAmbitionAllocation, setShowAmbitionAllocation] =
     useState<boolean>(false);
   const TOKEN = localStorage.getItem("userData");
+  const navigate = useNavigate();
   
   useEffect(() => {
     axios
@@ -39,7 +41,10 @@ const AmbitionDetails: React.FC<IAmbitionDetailsProps> = ({
       .then((res) => {
         setGoalDetailsData(res.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        navigate("/login");
+        console.log(error)
+      });
   }, [currentGoalId]);
 
   useEffect(() => {
@@ -286,9 +291,9 @@ const AmbitionDetails: React.FC<IAmbitionDetailsProps> = ({
         {!showEditGoals && !showAmbitionAllocation && (
           <Box
             sx={{
-              textAlign: "right",
-              position: "sticky",
-              bottom: "0px",
+              position: "fixed",
+              bottom: 0,
+              width: '100%'
             }}
           >
             <FooterMenu activeIconName={"ambition"} />
