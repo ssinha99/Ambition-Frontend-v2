@@ -27,11 +27,14 @@ function stringToColor(string: string) {
 }
 
 function stringAvatar(name?: string) {
+  const arr = name && name?.split(' ')
+  const firstNameFirstLetter = arr && arr[0][0];
+  const secondNameFirstLetter = arr && arr[1] && arr[1][0];
   return {
     sx: {
       bgcolor: name != undefined ?  stringToColor(name) : 'U',
     },
-    children: name != undefined ? `${name?.split(' ')[0][0]}${name?.split(' ')[1][0]}` : 'U',
+    children: name != undefined ? `${firstNameFirstLetter}${secondNameFirstLetter}` : 'U',
   };
 }
 
