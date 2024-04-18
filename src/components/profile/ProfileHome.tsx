@@ -3,7 +3,7 @@ import FooterMenu from "../shared/FooterMenu";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CustomAvatar from "../shared/CustomAvatar";
+// import CustomAvatar from "../shared/CustomAvatar";
 import Menu from "../shared/Menu";
 import CancelButton from "../shared/CancelButton";
 // import { useSelector } from "react-redux";
@@ -58,7 +58,7 @@ const ProfileHome = () => {
           sx={{ alignItems: "center", padding: "8%" }}
         >
           <Box>
-            <CustomAvatar name={userProfile && userProfile[0]?.name} />
+            {/* <CustomAvatar name={userProfile && userProfile[0]?.name} /> */}
           </Box>
           <Box>
             <Typography variant="h6" fontWeight={"600"}>
