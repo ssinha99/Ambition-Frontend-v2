@@ -43,7 +43,6 @@ const SignUpNextScreen: React.FC<ISignUpNextScreenProps> = ({
     axios
       .post("https://ambitions-backend.onrender.com/signup", payload)
       .then((res) => {
-        console.log(res.data);
         setIsFetching(false)
         if (res.data?.message) {
           setAlertMessage(res.data.message);

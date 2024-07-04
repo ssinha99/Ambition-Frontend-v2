@@ -39,7 +39,6 @@ function stringAvatar(name?: string) {
 }
 
 const  CustomAvatar: React.FC<ICustomAvatar> = ({name}) => {
-    console.log(name)
   return (
       <Avatar {...stringAvatar(name)} sx={{ width: 56, height: 56 }}/>
   );

@@ -5,7 +5,6 @@ interface IAllocatedFunds {
   funds: any;
 }
 const AllocatedFunds: React.FC<IAllocatedFunds> = ({ funds }) => {
-  console.log("From Allocated F:  " + funds);
   return (
     <>
       <Stack spacing={1.5} paddingX={1.25}>
