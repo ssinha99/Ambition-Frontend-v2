@@ -7,7 +7,7 @@ const Funds = () => {
       <Menu heading="Funds"/>
       <Box display={'flex'} alignItems={'center'} justifyContent={'center'} height={'100vh'}>
         <Typography variant="h5">
-          404 !!
+          Build in Progress!
         </Typography>
       </Box>
       <Box
