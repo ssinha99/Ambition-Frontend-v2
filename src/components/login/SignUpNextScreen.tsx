@@ -28,7 +28,7 @@ const SignUpNextScreen: React.FC<ISignUpNextScreenProps> = ({
   const [email, setEmail] = useState<String>("");
   const [alertMessage, setAlertMessage] = useState<String>();
   const [isFetching, setIsFetching] = useState<boolean>();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSignUpBtn = () => {
     const payload = {
@@ -39,16 +39,16 @@ const SignUpNextScreen: React.FC<ISignUpNextScreenProps> = ({
       password: password,
       email: email.toLowerCase(),
     };
-    setIsFetching(true)
+    setIsFetching(true);
     axios
       .post("https://ambitions-backend.onrender.com/signup", payload)
       .then((res) => {
-        setIsFetching(false)
+        setIsFetching(false);
         if (res.data?.message) {
           setAlertMessage(res.data.message);
         } else {
-          setAlertMessage("");
-          navigate('/login')
+          setAlertMessage("Signed up sucessfully!");
+          setTimeout(() => navigate("/login"), 1000);
         }
       })
       .catch((error) => {
@@ -128,7 +128,12 @@ const SignUpNextScreen: React.FC<ISignUpNextScreenProps> = ({
           )}
         </PrimaryButton>
       </Stack>
-      <Box display={"flex"} justifyContent={"center"} pb={2} sx={{position: 'sticky', bottom: 0}}>
+      <Box
+        display={"flex"}
+        justifyContent={"center"}
+        pb={2}
+        sx={{ position: "sticky", bottom: 0 }}
+      >
         <Typography variant="body1" fontWeight={600}>
           Already have an account?
         </Typography>

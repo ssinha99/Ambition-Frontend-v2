@@ -1,4 +1,10 @@
-import { Box, CircularProgress, Stack, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import PrimaryButton from "../shared/PrimaryButton";
 import { useState } from "react";
@@ -26,19 +32,34 @@ const Login = () => {
       axios
         .post("https://ambitions-backend.onrender.com/login", payload)
         .then((res) => {
-          if(res.data.message)
-            setAlertMessage(res.data.message);
-          else{
-            localStorage.setItem('userData', JSON.stringify({id: res.data?.email, token: res.data?.token})) // localstorage store data in the form of string.
-            dispatch(setUserEmail(res.data.email))
-            navigate('/')
+          if (res.data.message) setAlertMessage(res.data.message);
+          else {
+            localStorage.setItem(
+              "userData",
+              JSON.stringify({ id: res.data?.email, token: res.data?.token })
+            ); // localstorage store data in the form of string.
+            dispatch(setUserEmail(res.data.email));
+            navigate("/");
           }
-          setIsFetching(false)
+          setIsFetching(false);
         })
         .catch((error) => {
           console.log({ Error: error });
         });
     }
+  };
+  const handlePhoneOrEmailField = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (alertMessage !== "") setAlertMessage("");
+    setPhoneOrMail(e.target.value);
+  };
+
+  const handlePasswordField = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    if (alertMessage !== "") setAlertMessage("");
+    setPassword(e.target.value);
   };
 
   return (
@@ -54,7 +75,7 @@ const Login = () => {
         </Stack>
         <TextField
           value={phoneOrMail}
-          onChange={(e) => setPhoneOrMail(e.target.value)}
+          onChange={(e) => handlePhoneOrEmailField(e)}
           sx={{ background: "white" }}
           placeholder="Phone or Email *"
           autoComplete="none"
@@ -62,7 +83,7 @@ const Login = () => {
         ></TextField>
         <TextField
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => handlePasswordField(e)}
           sx={{ background: "white" }}
           type="password"
           placeholder="Password *"
@@ -82,16 +103,21 @@ const Login = () => {
         <PrimaryButton
           variant="contained"
           onClick={() => handleLoginBtnClick()}
-          disabled = {isFetching}
+          disabled={isFetching}
         >
-          {isFetching? 
-            <CircularProgress color="inherit" size={"25px"} /> : 
+          {isFetching ? (
+            <CircularProgress color="inherit" size={"25px"} />
+          ) : (
             <Typography variant="body1">Login</Typography>
-          }
-          
+          )}
         </PrimaryButton>
       </Stack>
-      <Box display={"flex"} justifyContent={"center"} pb={2} sx={{position: 'sticky', bottom: 0}}>
+      <Box
+        display={"flex"}
+        justifyContent={"center"}
+        pb={2}
+        sx={{ position: "sticky", bottom: 0 }}
+      >
         <Typography variant="body1" fontWeight={600}>
           Don't have an account?
         </Typography>

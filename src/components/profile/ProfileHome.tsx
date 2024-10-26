@@ -13,6 +13,7 @@ import HeadsetMicIcon from "@mui/icons-material/HeadsetMic";
 import PersonAddAltSharpIcon from "@mui/icons-material/PersonAddAltSharp";
 import { styleModal } from "../shared/styleModal";
 import PrimaryButton from "../shared/PrimaryButton";
+import GoalsAndAssets from "./GoalsAndAssets";
 
 const ProfileHome = () => {
   // const userEmail = useSelector(getUserEmail)
@@ -52,23 +53,26 @@ const ProfileHome = () => {
     <Box minHeight={"100vh"}>
       <Menu heading={"Profile"} />
       {!isFetching ? (
-        <Stack
-          direction={"row"}
-          spacing={3}
-          sx={{ alignItems: "center", padding: "8%" }}
-        >
-          <Box>
-            <CustomAvatar name={userProfile && userProfile[0]?.name} />
-          </Box>
-          <Box>
-            <Typography variant="h6" fontWeight={"600"}>
-              {userProfile && userProfile[0]?.name}
-            </Typography>
-            <Typography variant="body2">
-              {userProfile && userProfile[0]?.phone}
-            </Typography>
-          </Box>
-        </Stack>
+        <>
+          <Stack
+            direction={"row"}
+            spacing={3}
+            sx={{ alignItems: "center", padding: "8%" }}
+          >
+            <Box>
+              <CustomAvatar name={userProfile && userProfile[0]?.name} />
+            </Box>
+            <Box>
+              <Typography variant="h6" fontWeight={"600"}>
+                {userProfile && userProfile[0]?.name}
+              </Typography>
+              <Typography variant="body2">
+                {userProfile && userProfile[0]?.phone}
+              </Typography>
+            </Box>
+          </Stack>
+          <GoalsAndAssets />
+        </>
       ) : (
         <Stack
           sx={{
