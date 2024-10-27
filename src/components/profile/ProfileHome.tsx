@@ -14,6 +14,10 @@ import PersonAddAltSharpIcon from "@mui/icons-material/PersonAddAltSharp";
 import { styleModal } from "../shared/styleModal";
 import PrimaryButton from "../shared/PrimaryButton";
 import GoalsAndAssets from "./GoalsAndAssets";
+import WhatsappIcon from "../../assets/WhatsappIcon";
+import TelegramIcon from "../../assets/TelegramIcon";
+import LinkedinIcon from "../../assets/LinkedinIcon";
+import InstagramIcon from "../../assets/InstagramIcon";
 
 const ProfileHome = () => {
   // const userEmail = useSelector(getUserEmail)
@@ -88,9 +92,8 @@ const ProfileHome = () => {
         </Stack>
       )}
       <Stack
-        spacing={1}
-        width={"60%"}
-        paddingLeft={4}
+        spacing={0}
+        paddingLeft={3}
         sx={{ position: "fixed", bottom: "80px" }}
       >
         <CancelButton
@@ -107,13 +110,28 @@ const ProfileHome = () => {
           <Typography variant="h6" color={"#000000"} paddingX={2}>
             Contact us
           </Typography>
+          <WhatsappIcon />
         </CancelButton>
-        <CancelButton sx={{ display: "flex", justifyContent: "left" }}>
-          <PersonAddAltSharpIcon />
-          <Typography variant="h6" color={"#000000"} paddingX={2}>
-            Invite Friends
-          </Typography>
-        </CancelButton>
+        <Stack direction={"row"}>
+          <CancelButton
+            sx={{
+              display: "flex",
+              justifyContent: "left",
+              width: "100%",
+            }}
+          >
+            <PersonAddAltSharpIcon />
+            <Typography variant="h6" color={"#000000"} paddingX={2}>
+              Invite Friends
+            </Typography>
+          </CancelButton>
+          <Stack direction={"row"} alignItems={"center"} gap={2}>
+            <WhatsappIcon />
+            <TelegramIcon />
+            <LinkedinIcon />
+            <InstagramIcon />
+          </Stack>
+        </Stack>
       </Stack>
       <Box
         sx={{
