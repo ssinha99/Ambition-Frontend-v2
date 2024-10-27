@@ -9,7 +9,7 @@ import {
 import FooterMenu from "../shared/FooterMenu";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CustomAvatar from "../shared/CustomAvatar";
 import Menu from "../shared/Menu";
 import CancelButton from "../shared/CancelButton";
@@ -122,10 +122,11 @@ const ProfileHome = () => {
         </CancelButton>
         <CancelButton sx={{ display: "flex", justifyContent: "left" }}>
           <HeadsetMicIcon />
-          <Typography variant="body1" color={"#000000"} paddingX={2}>
-            Contact us
-          </Typography>
-          <WhatsappIcon />
+          <Link to="tel: +91-7903561361" style={{ textDecoration: "none" }}>
+            <Typography variant="body1" color={"#000000"} paddingX={2}>
+              Contact us
+            </Typography>
+          </Link>
         </CancelButton>
         <Stack direction={"row"}>
           <Box>
