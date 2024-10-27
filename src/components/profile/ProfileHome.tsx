@@ -25,6 +25,8 @@ import WhatsappIcon from "../../assets/WhatsappIcon";
 import TelegramIcon from "../../assets/TelegramIcon";
 import LinkedinIcon from "../../assets/LinkedinIcon";
 import InstagramIcon from "../../assets/InstagramIcon";
+import { WhatsappShareButton } from "react-share";
+import inviteText from "../../assets/inviteText";
 
 const ProfileHome = () => {
   // const userEmail = useSelector(getUserEmail)
@@ -136,9 +138,11 @@ const ProfileHome = () => {
             </CancelButton>
           </Box>
           <Stack display={"flex"} direction={"row"} alignItems={"center"}>
-            <IconButton>
-              <WhatsappIcon />
-            </IconButton>
+            <WhatsappShareButton url={inviteText}>
+              <IconButton>
+                <WhatsappIcon />
+              </IconButton>
+            </WhatsappShareButton>
             <IconButton>
               <TelegramIcon />
             </IconButton>
