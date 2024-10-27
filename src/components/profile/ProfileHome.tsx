@@ -25,7 +25,12 @@ import WhatsappIcon from "../../assets/WhatsappIcon";
 import TelegramIcon from "../../assets/TelegramIcon";
 import LinkedinIcon from "../../assets/LinkedinIcon";
 import InstagramIcon from "../../assets/InstagramIcon";
-import { WhatsappShareButton } from "react-share";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+} from "react-share";
 import inviteText from "../../assets/inviteText";
 
 const ProfileHome = () => {
@@ -143,15 +148,21 @@ const ProfileHome = () => {
                 <WhatsappIcon />
               </IconButton>
             </WhatsappShareButton>
-            <IconButton>
-              <TelegramIcon />
-            </IconButton>
-            <IconButton>
-              <LinkedinIcon />
-            </IconButton>
-            <IconButton>
-              <InstagramIcon />
-            </IconButton>
+            <TelegramShareButton url={inviteText}>
+              <IconButton>
+                <TelegramIcon />
+              </IconButton>
+            </TelegramShareButton>
+            <LinkedinShareButton url={inviteText}>
+              <IconButton>
+                <LinkedinIcon />
+              </IconButton>
+            </LinkedinShareButton>
+            <FacebookShareButton url={inviteText}>
+              <IconButton>
+                <InstagramIcon />
+              </IconButton>
+            </FacebookShareButton>
           </Stack>
         </Stack>
       </Stack>
