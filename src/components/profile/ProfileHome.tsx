@@ -1,4 +1,11 @@
-import { Box, CircularProgress, Modal, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  CircularProgress,
+  IconButton,
+  Modal,
+  Stack,
+  Typography,
+} from "@mui/material";
 import FooterMenu from "../shared/FooterMenu";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -93,7 +100,8 @@ const ProfileHome = () => {
       )}
       <Stack
         spacing={0}
-        paddingLeft={3}
+        paddingLeft={2}
+        paddingRight={1}
         sx={{ position: "fixed", bottom: "80px" }}
       >
         <CancelButton
@@ -101,35 +109,45 @@ const ProfileHome = () => {
           onClick={() => setShowLogOutConfirmation(true)}
         >
           <LogoutIcon />
-          <Typography variant="h6" color={"#000000"} paddingX={2}>
+          <Typography variant="body1" color={"#000000"} paddingX={2}>
             Log out
           </Typography>
         </CancelButton>
         <CancelButton sx={{ display: "flex", justifyContent: "left" }}>
           <HeadsetMicIcon />
-          <Typography variant="h6" color={"#000000"} paddingX={2}>
+          <Typography variant="body1" color={"#000000"} paddingX={2}>
             Contact us
           </Typography>
           <WhatsappIcon />
         </CancelButton>
         <Stack direction={"row"}>
-          <CancelButton
-            sx={{
-              display: "flex",
-              justifyContent: "left",
-              width: "100%",
-            }}
-          >
-            <PersonAddAltSharpIcon />
-            <Typography variant="h6" color={"#000000"} paddingX={2}>
-              Invite Friends
-            </Typography>
-          </CancelButton>
-          <Stack direction={"row"} alignItems={"center"} gap={2}>
-            <WhatsappIcon />
-            <TelegramIcon />
-            <LinkedinIcon />
-            <InstagramIcon />
+          <Box>
+            <CancelButton
+              sx={{
+                display: "flex",
+                justifyContent: "left",
+                width: "100%",
+              }}
+            >
+              <PersonAddAltSharpIcon />
+              <Typography variant="body1" color={"#000000"} paddingLeft={2}>
+                Invite Friends
+              </Typography>
+            </CancelButton>
+          </Box>
+          <Stack display={"flex"} direction={"row"} alignItems={"center"}>
+            <IconButton>
+              <WhatsappIcon />
+            </IconButton>
+            <IconButton>
+              <TelegramIcon />
+            </IconButton>
+            <IconButton>
+              <LinkedinIcon />
+            </IconButton>
+            <IconButton>
+              <InstagramIcon />
+            </IconButton>
           </Stack>
         </Stack>
       </Stack>
